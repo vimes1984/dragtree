@@ -11,7 +11,7 @@
   <button class="btn btn-lg btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Stage</button>
   <button class="btn btn-lg btn-success" ng-click="resetgame()" >Reset</button>
   <div ng-repeat="time in reactiontimes">
-    <p>Reaction time: {{time.reactiontime}} milliseconds</p>
+    <p>Reaction time: {{time.reactiontime}}</p>
   </div>
 
   <svg ng-attr-height="{{graph.height}}%" ng-attr-width="{{graph.width}}%">  
