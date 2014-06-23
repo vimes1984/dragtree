@@ -1,31 +1,9 @@
-
-
 <div class="jumbotron">
   <p>Kathy's super duper christmas tree!</p>
-  <p>start of by staging the game, then use the return key on your keyboard to see how quick you can be!</p>
+    <p>Pick a tree and start playing!</p>
+    <a class="btn btn-lg btn-success" ng-href="/#/sport">Sportsman Tree</a>
+    <a class="btn btn-lg btn-success" ng-href="/#/pro">Pro Tree</a>
 </div>
-
-<div class="row marketing" resize ng-keypress="keypress($event)" tabindex="0">
-<!--     <h3>Timer 1: <timer/></h3>-->
-<!--        <h3>Timer 2: <timer interval="2000"/></h3>-->
-  <timer autostart="false">&nbsp;</timer>
-  <button class="btn btn-lg btn-success" ng-click="startTimer()" ng-disabled="timerRunning">Stage</button>
-  <button class="btn btn-lg btn-success" ng-click="resetgame()" >Reset</button>
-  <div ng-repeat="time in reactiontimes">
-    <p>Reaction time: {{time.reactiontime}} milliseconds</p>
-  </div>
-
-  <svg ng-attr-height="{{graph.height}}%" ng-attr-width="{{graph.width}}%">  
-    <circle ng-repeat="circle in circles" 
-        ng-attr-cx="{{circle.x}}" 
-        ng-attr-cy="{{circle.y}}" 
-        ng-attr-r= "{{circle.r}}" stroke="{{circle.stroke}}" stroke-width="{{circle.strokewidth}}" fill="{{circle.fill}}">
-    </circle>
-</svg>  
-
-
-</div>
-
 <div class="footer">
   <p><span class="glyphicon glyphicon-heart"></span> from the BAWD</p>
 </div>
