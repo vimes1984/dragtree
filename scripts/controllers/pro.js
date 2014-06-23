@@ -93,9 +93,9 @@ angular.module('timerApp')
 		}
 	    $scope.reaction = n;
 	    if($scope.reaction > 999){
-	    	$scope.reaction = numberWithCommas($scope.reaction) + ' Milliseconds';
+	    	$scope.reaction = numberWithCommas($scope.reaction) + ' Seconds';
 	    }else{
-	    	$scope.reaction = '0.'+$scope.reaction+ ' Milliseconds';
+	    	$scope.reaction = '0.'+$scope.reaction+ ' Seconds';
 	    }
 	}
     $scope.$on('ontime', function(){

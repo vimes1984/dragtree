@@ -95,10 +95,9 @@ angular.module('timerApp')
 		}
 	    $scope.reaction = n;
 	    if($scope.reaction > 999){
-	    	$scope.reaction = numberWithCommas($scope.reaction) + 'seconds';
+	    	$scope.reaction = numberWithCommas($scope.reaction) + ' Seconds';
 	    }else{
-	    	$scope.reaction = '0.'+$scope.reaction+ 'milliseconds';
-
+	    	$scope.reaction = '0.'+$scope.reaction+ ' Seconds';
 	    }
 	}
     $scope.$on('ontime', function(){
@@ -107,7 +106,7 @@ angular.module('timerApp')
        	$scope.$broadcast('timer-clear');
         $scope.$broadcast('timer-stop');
 		$scope.timerConsole = [];
-			MyTimeObject($scope.endarray.millis - $scope.agreenstrt)
+			MyTimeObject($scope.endarray.millis - $scope.agreenstrt);
 		$scope.reactiontimes.push({'reactiontime': $scope.reaction}) ; 
 		$scope.$apply();
 		//alert('your time:'+$scope.reactiontimes);
