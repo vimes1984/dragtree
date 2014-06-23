@@ -27,19 +27,16 @@ angular
       });
   })
   .directive('resize', function ($window) {
-  return function ($scope, element) {
-    console.log(element)
-    $scope.getelementDimensions = function () {
-      return { 'h': element.context.offsetHeight, 'w': element.context.offsetWidth };
+    return function ($scope, element) {
+      $scope.getelementDimensions = function () {
+        return { 'h': element.context.offsetHeight, 'w': element.context.offsetWidth };
+      };
+      $scope.$watch($scope.getelementDimensions, function (newValue) {
+        $scope.windowHeight = newValue.h;
+        $scope.windowWidth = newValue.w;
+      }, true);
+      angular.element($window).bind('resize', function () {
+        $scope.$apply();
+      });
     };
-    $scope.$watch($scope.getelementDimensions, function (newValue, oldValue) {
-      $scope.windowHeight = newValue.h;
-            $scope.windowWidth = newValue.w;
-            
-    }, true);
-  
-    angular.element($window).bind('resize', function () {
-      $scope.$apply();
-    });
-  }
-});
+  });
