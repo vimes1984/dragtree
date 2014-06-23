@@ -87,13 +87,25 @@ angular.module('timerApp')
 		$scope.$apply();
 		alert('to quick sonny jim!');
     });
+	function MyTimeObject(n) {
+		function numberWithCommas(x) {
+    		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+		}
+	    $scope.reaction = n;
+	    if($scope.reaction > 999){
+	    	$scope.reaction = numberWithCommas($scope.reaction) + ' Milliseconds';
+	    }else{
+	    	$scope.reaction = '0.'+$scope.reaction+ ' Milliseconds';
+	    }
+	}
     $scope.$on('ontime', function(){
 		$scope.$broadcast('timer-stop');
        	$scope.timerRunning = true;
        	$scope.$broadcast('timer-clear');
         $scope.$broadcast('timer-stop');
 		$scope.timerConsole = [];
-		$scope.reactiontimes.push({'reactiontime': $scope.endarray.millis - $scope.agreenstrt}) ; 
+		MyTimeObject($scope.endarray.millis - $scope.agreenstrt);
+		$scope.reactiontimes.push({'reactiontime': $scope.reaction}) ;
 		$scope.$apply();
 		//alert('your time:'+$scope.reactiontimes);
     });    
